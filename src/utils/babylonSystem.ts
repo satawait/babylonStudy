@@ -1,4 +1,4 @@
-import { Scene, Engine, Camera, ArcRotateCamera, Vector3 } from "@babylonjs/core"
+import { Scene, Engine, Camera, ArcRotateCamera, Vector3, Color4 } from "@babylonjs/core"
 export class BabylonSystem {
     scene: Scene
     canvas: HTMLCanvasElement
@@ -8,6 +8,7 @@ export class BabylonSystem {
         this.canvas = canvas
         this.engine = new Engine(this.canvas)
         this.scene = new Scene(this.engine)
+        this.scene.clearColor = new Color4(0, 0, 0, 1)
         this.camera = new ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 3, new Vector3(0, 0, 0))
     }
     render() {
